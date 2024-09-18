@@ -7,6 +7,7 @@ WORKDIR /app
 RUN npm i
 WORKDIR /app/apps/app
 ARG env=prod
+RUN npm install --save-dev @babel/plugin-proposal-private-property-in-object
 RUN PUBLIC_URL=http://127.0.0.1:3001 npm run build
 
 FROM nginx:1.13
